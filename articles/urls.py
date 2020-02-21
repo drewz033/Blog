@@ -17,9 +17,11 @@ Including another URLconf
 #create two more urls, about page and home page
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,re_path
 from . import views
+app_name='articles'
 
 urlpatterns = [
-    path('',views.articles_list)
+    path('',views.articles_list,name='list'),
+    re_path('(?P<slug>[\w-]+)/$', views.article_detail,name='detail'),
 ]

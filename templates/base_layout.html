@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Articles</title>
+  </head>
+  <body>
+    <h1>Article List</h1>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+  <div class='wrapper'>
+    <h1><a href="{% url 'articles:list' %}">Click Here</a></h1>
+    {% block content %}
+
+    {% endblock %}
+
+    </div>
+  </body>
+</html>
